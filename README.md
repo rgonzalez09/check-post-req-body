@@ -3,7 +3,7 @@
 ### Starter
 
 ```shell
-$ git clone
+$ git clone https://github.com/ironhack-labs/check-post-req-body
 $ cd check-post-req-body
 $ npm install
 $ npm install nodemon --save-dev
