@@ -34,6 +34,7 @@ app.post('/new/user', (req, res) => {
   const { firstName, lastName, street, number, city, zip, country } = req.body;
   console.log(
     `User's input:`,
+    req.body,
     firstName,
     lastName,
     street,
