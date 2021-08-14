@@ -1,30 +1,34 @@
-const express = require('express');
+const express = require("express");
 
-const hbs = require('hbs');
+const hbs = require("hbs");
 
-require('dotenv').config();
+require("dotenv").config();
 
 const app = express();
 
 // ****************** require the necessary npm package here: ******************
-// ... your code here
+app.use(express.urlencoded({ extended: true }));
 
 // *****************************************************************************
 
-app.set('views', __dirname + '/views');
-app.set('view engine', 'hbs');
+app.set("views", __dirname + "/views");
+app.set("view engine", "hbs");
 
-app.use(express.static('public'));
+app.use(express.static("public"));
 
-app.get('/', (req, res) => {
-  res.render('index');
+app.get("/", (req, res) => {
+  res.render("index");
 });
 
 // 4.
-// ... your code here
+app.post("/create", (req, res) => {
+  console.log(req.body.theAge);
+});
 
 // 5:
-// ... your code here
+app.post("/address", (req, res) => {
+  console.log(req.body);
+});
 
 app.listen(process.env.PORT, () =>
   console.log(`Running on port: ${process.env.PORT}`)
